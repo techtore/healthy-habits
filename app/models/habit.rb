@@ -1,4 +1,4 @@
 class Habit < ActiveRecord::Base
     belongs_to :user
-    has_many :dates
+    belongs_to :date
 end 

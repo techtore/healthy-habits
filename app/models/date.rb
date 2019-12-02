@@ -1,3 +1,4 @@
 class Date < ActiveRecord::Base
-    belongs_to :habit
+    has many :habits
+    has_many :users, through: :habits
 end
