@@ -1,3 +1,3 @@
-class Date < ActiverRecord::Base
+class Date < ActiveRecord::Base
     belongs_to :habit
 end
