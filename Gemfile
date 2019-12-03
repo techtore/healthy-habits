@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'bundler', '< 2.0.2', '>= 1.3.0'
+gem 'rails', '~> 4.2', '>= 4.2.6'
 gem 'sinatra'
 gem 'activerecord', '~> 4.2', '>= 4.2.6', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
