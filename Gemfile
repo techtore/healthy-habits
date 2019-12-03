@@ -13,6 +13,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
+gem 'faker', '~> 1.6', '>= 1.6.3'
 
 group :test do
   gem 'rspec'
