@@ -13,6 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20191202235930) do
 
+  create_table "dates", force: :cascade do |t|
+    t.date     "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "habits", force: :cascade do |t|
     t.string  "name"
     t.text    "notes"
