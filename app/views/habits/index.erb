@@ -1,0 +1,6 @@
+<h1>Healthy Habits</h1>
+
+<% @habits.each do |habit| %>
+    <p><a href="/habits/<%= habit.id %>"><%= habit.name %></a></p>
+
+<% end %>
