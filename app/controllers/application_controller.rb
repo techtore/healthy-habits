@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret "habit_tracker"
+    set :session_secret, "habit_tracker"
   end
 
   get "/" do
@@ -16,7 +16,6 @@ class ApplicationController < Sinatra::Base
   helpers do 
     def logged_in?
       !!session[:user_id]
-      #if user exists, true, if not, false
     end
 
     def current_user
