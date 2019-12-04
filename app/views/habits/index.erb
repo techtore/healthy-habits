@@ -1,6 +1,11 @@
-<h1>Your Healthy Habits</h1>
+<h1><%=@user.name%>'s Healthy Habits</h1>
 
 <% @habits.each do |habit| %>
     <p><a href="/habits/<%= habit.id %>"><%= habit.name %></a></p>
 
 <% end %>
+
+<h2>Options</h2>
+<a href= '/habits/new'>Create New Habit</a>
+
+<a href='/logout'>Log Out</a>
