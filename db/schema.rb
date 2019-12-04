@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 20191203165801) do
   create_table "habits", force: :cascade do |t|
     t.string  "name"
     t.text    "notes"
+    t.date    "date"
     t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
     t.string "password_digest"
   end
 
