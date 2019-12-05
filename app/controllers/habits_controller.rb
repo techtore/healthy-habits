@@ -53,7 +53,7 @@ class HabitsController < ApplicationController
             redirect '/login'
         else
             @habits.update(name: params[:name], date: params[:date], notes: params[:notes], user_id: @user.id)
-            redirect '/habits'
+            redirect "/habits/#{@habits.id}"
         end
     end
 
