@@ -38,14 +38,31 @@ class HabitsController < ApplicationController
     end
 
     get '/habits/:id/edit' do 
-
+        if current_user
+            @habits = Habit.find_by(id: params[:id])
+            erb :'habits/edit'
+        else
+            redirect '/login' 
+        end
     end
 
     patch '/habits/:id' do 
-
+        @user = current_user
+        @habits = Habit.find_by(id: params[:id])
+        if !@user
+            redirect '/login'
+        else
+            @habits.update(name: params[:name], date: params[:date], notes: params[:notes], user_id: @user.id)
+            redirect '/habits'
+        end
     end
 
-    delete 'habits/:id' do 
-
+    delete '/habits/:id' do 
+        @user = current_user
+        @habit = Habit.find_by(params[:id])
+        if @user && @habit.id = params[:id]
+            @habit.destroy
+        end
+        redirect '/habits'
     end
 end

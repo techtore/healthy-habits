@@ -1,1 +1,10 @@
-<%#= edit a  habit that's been created %>
+<h1>Edit Habit</h1>
+    <form action="/habits/<%= @habits.id%>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+
+    <h3><input type="text" name="name" value= "<%= @habits.name %>"></h3>
+    <h3><input type="text" name="date" value= "<%= @habits.date %>"></h3>
+    <h3><input type="text" name="notes" value= "<%= @habits.notes %>"></h3>
+    
+    <input type="submit" name="submit" value="Update Habit">
+</form>

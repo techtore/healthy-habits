@@ -1,6 +1,15 @@
 <%#= show the data for the recorded habit %>
 <h2><%=@habit.name%></h2><br>
 <h3><%=@habit.date%></h3><br>
-<h3><%=@habit.notes%></h3>
+<h3><%=@habit.notes%></h3><br>
+<br>
+<br>
 
 
+<a href="/habits/<%= @habit.id %>/edit"> <input type="submit" name="submit" value="Edit Habit"></a>
+
+<form method="POST" action="/habits/<%= @habit.id %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Habit">
+  
+</form>
