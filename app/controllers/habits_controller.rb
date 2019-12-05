@@ -20,7 +20,7 @@ class HabitsController < ApplicationController
 
     post '/habits' do 
         user = User.find_by(id: params[:user_id])
-        habit = Habit.create(name: params[:name], date: params[:date], notes: params[:notes])
+        habit = Habit.create(name: params[:name], date: params[:date], notes: params[:notes], user_id: current_user.id)
         if habit.save
             redirect '/habits'
         else
