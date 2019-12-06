@@ -19,12 +19,13 @@ class HabitsController < ApplicationController
     end
 
     post '/habits' do 
-        user = User.find_by(id: params[:user_id])
-        habit = current_user.habits.create(name: params[:name], date: params[:date], notes: params[:notes], user_id: current_user.id)
-        if habit
-            redirect '/habits'
-        else
+        habit = current_user.habits.build(name: params[:name], date: params[:date], notes: params[:notes], user_id: current_user.id)
+        
+        if params[:name] == "" || params[:date] == "" || params[:notes] == ""
             redirect '/habits/new'
+
+        else habit.save
+            redirect '/habits'
         end
     end
 
