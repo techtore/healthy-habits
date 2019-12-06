@@ -20,7 +20,7 @@ class HabitsController < ApplicationController
 
     post '/habits' do 
         user = User.find_by(id: params[:user_id])
-        habit = Habit.create(name: params[:name], date: params[:date], notes: params[:notes], user_id: current_user.id)
+        habit = current_user.habits.create(name: params[:name], date: params[:date], notes: params[:notes], user_id: current_user.id)
         if habit
             redirect '/habits'
         else
@@ -30,7 +30,7 @@ class HabitsController < ApplicationController
 
     get '/habits/:id' do
         if logged_in? && current_user
-            @habit = Habit.find_by(id: params[:id])
+            @habit = current_user.habits.find_by(id: params[:id])
             erb :'habits/show'
         else
             redirect '/login'
@@ -61,7 +61,7 @@ class HabitsController < ApplicationController
         if logged_in?
             @habit = current_user.habits.find_by(id: params[:id])
             @habit.destroy
-            
+
             redirect '/habits'
         else
             redirect '/'
