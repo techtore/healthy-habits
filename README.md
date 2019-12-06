@@ -15,7 +15,7 @@ You should see the app running on localhost:9393.
 
 # License
 
-https://opensource.org/licenses/MIT
+Healthy-Habits is licensed under the MIT license. https://opensource.org/licenses/MIT
 
 
 
