@@ -23,7 +23,6 @@ class HabitsController < ApplicationController
         
         if params[:name] == "" || params[:date] == "" || params[:notes] == ""
             redirect '/habits/new'
-
         else habit.save
             redirect '/habits'
         end
